@@ -7,6 +7,7 @@ public class card : MonoBehaviour
     public AudioClip flip;
     public AudioSource audioSource;
     public Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {

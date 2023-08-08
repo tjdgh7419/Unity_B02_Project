@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using System.Linq;
 using Random = UnityEngine.Random;
 using UnityEngine.SceneManagement;
+using Unity.Collections.LowLevel.Unsafe;
 
 public class gameManager : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class gameManager : MonoBehaviour
     public Text timeTxt;
 	public static gameManager I;
 	public bool isMatching;
+
 
 
     void Awake()
@@ -71,6 +73,10 @@ public class gameManager : MonoBehaviour
 			}
 		}
 	}
+    private void UpdateTimeText()
+    {
+        timeTxt.text = Mathf.Ceil(currentTime).ToString();
+    }
 
 
     public void isMatched()
@@ -85,16 +91,21 @@ public class gameManager : MonoBehaviour
 			secondCard.GetComponent<card>().destroyCard();
 
 			int cardsLeft = GameObject.Find("cards").transform.childCount;
+
 			if(cardsLeft == 2)
 			{
 				Time.timeScale = 0f;
 				endTxt.SetActive(true);
 			}
 		}
+
 		else
 		{
-			FailMatch();
-            firstCard.GetComponent <card>().closeCard();
+			firstCard.transform.Find("back").GetComponent<SpriteRenderer>().color = Color.gray;
+			secondCard.transform.Find("back").GetComponent<SpriteRenderer>().color = Color.gray;
+            FailMatch();
+  
+            firstCard.GetComponent<card>().closeCard();
 			secondCard.GetComponent<card>().closeCard();
 		}
 
@@ -105,7 +116,7 @@ public class gameManager : MonoBehaviour
     public void FailMatch()
     {
         isMatching = true;
-        currentTime -= 5f; // 실패할 때마다 5초씩 감소 (원하는 시간을 조정 가능)
+        currentTime -= 3f; // 실패할 때마다 5초씩 감소 (원하는 시간을 조정 가능)
         if (currentTime < 0f)
         {
             currentTime = 0f;
@@ -114,10 +125,6 @@ public class gameManager : MonoBehaviour
 		isMatching = false;
     }
 
-    private void UpdateTimeText()
-    {
-        timeTxt.text = "Time: " + Mathf.Ceil(currentTime).ToString();
-    }
 
 
     private void GameOver()
