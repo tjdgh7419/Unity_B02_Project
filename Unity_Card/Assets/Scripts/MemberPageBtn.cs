@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class startBtn : MonoBehaviour
+public class MemberPageBtn : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -17,9 +17,8 @@ public class startBtn : MonoBehaviour
         
     }
 
-    public void gameStart()
+    public void MemberPageStart()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("ScoreBoardScene");
     }
 }
-
