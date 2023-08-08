@@ -16,7 +16,7 @@ public class gameManager : MonoBehaviour
 	public GameObject secondCard;
     public GameObject card;
     public Text timeTxt;
-    float time;
+    public float time;
 	public static gameManager I;
 
 	void Awake()
@@ -50,7 +50,7 @@ public class gameManager : MonoBehaviour
     {
         time += Time.deltaTime;
         timeTxt.text = time.ToString("N2");
-		if(time >= 3f)
+		if(time >= 30f)
 		{
 			endTxt.SetActive(true);
 			Time.timeScale = 0f;
