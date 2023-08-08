@@ -26,6 +26,7 @@ public class gameManager : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
+		int a=9;
 		Time.timeScale = 1.0f;
 		int[] rtans = { 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7 };
 
