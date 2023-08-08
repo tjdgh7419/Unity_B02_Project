@@ -56,6 +56,11 @@ public class gameManager : MonoBehaviour
 			Time.timeScale = 0f;
 
 		}
+
+		if(time >= 20f)
+		{
+			timeTxt.color = Color.red;
+		}
     }
 
 	public void isMatched()
