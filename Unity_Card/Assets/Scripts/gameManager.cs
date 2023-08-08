@@ -40,7 +40,7 @@ public class gameManager : MonoBehaviour
 			float y = (i % 4) * 1.4f - 3.0f;
 			newCard.transform.position = new Vector3(x, y, 0);
 
-			string rtanName = "rtan" + rtans[i].ToString();
+			string rtanName = "team" + rtans[i].ToString();
 			newCard.transform.Find("front").GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(rtanName);
 		}
     } 
