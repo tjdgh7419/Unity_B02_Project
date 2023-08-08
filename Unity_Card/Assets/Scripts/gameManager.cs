@@ -54,9 +54,7 @@ public class gameManager : MonoBehaviour
 		{
 			endTxt.SetActive(true);
 			Time.timeScale = 0f;
-
 		}
-
 		if(time >= 20f)
 		{
 			timeTxt.color = Color.red;
