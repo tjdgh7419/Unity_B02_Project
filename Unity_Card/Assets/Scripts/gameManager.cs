@@ -9,6 +9,8 @@ using UnityEngine.SceneManagement;
 
 public class gameManager : MonoBehaviour
 {
+	public GameObject nameTxt;
+	public Text nameTxt_name;
 	public AudioClip match;
 	public AudioSource audioSource;
 	public GameObject endTxt;
@@ -18,6 +20,8 @@ public class gameManager : MonoBehaviour
     public Text timeTxt;
     public float time;
 	public static gameManager I;
+	bool nameChk = false;
+	float curTime = 0;
 
 	void Awake()
 	{
@@ -56,18 +60,31 @@ public class gameManager : MonoBehaviour
 			Time.timeScale = 0f;
 
 		}
+
+		if (nameChk && (curTime + 1f < time))
+		{
+			nameTxt.SetActive(false);
+		}
     }
 
 	public void isMatched()
 	{
 		string firstCardImage = firstCard.transform.Find("front").GetComponent<SpriteRenderer>().sprite.name;
 		string secondCardImage = secondCard.transform.Find("front").GetComponent<SpriteRenderer>().sprite.name;
-
+		
 		if (firstCardImage == secondCardImage) 
 		{
 			audioSource.PlayOneShot(match);
 			firstCard.GetComponent<card>().destroyCard();
 			secondCard.GetComponent<card>().destroyCard();
+
+			if (firstCardImage.Contains("rtan"))
+			{
+				nameTxt_name.text = "rtan";
+				nameChk = true;
+				curTime = time;
+				nameTxt.SetActive(true);
+			}
 
 			int cardsLeft = GameObject.Find("cards").transform.childCount;
 			if(cardsLeft == 2)
