@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using System.Linq;
 using Random = UnityEngine.Random;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class gameManager : MonoBehaviour
 {
@@ -78,9 +79,23 @@ public class gameManager : MonoBehaviour
 			firstCard.GetComponent<card>().destroyCard();
 			secondCard.GetComponent<card>().destroyCard();
 
-			if (firstCardImage.Contains("rtan"))
+			if (firstCardImage[4] - '0' >= 0 && firstCardImage[4] - '0' < 3) 
 			{
-				nameTxt_name.text = "rtan";
+				nameTxt_name.text = "강성호";
+				nameChk = true;
+				curTime = time;
+				nameTxt.SetActive(true);
+			}
+			else if (firstCardImage[4] - '0' >= 3 && firstCardImage[4] - '0' < 6)
+			{
+				nameTxt_name.text = "박정우";
+				nameChk = true;
+				curTime = time;
+				nameTxt.SetActive(true);
+			}
+			else if (firstCardImage[4] - '0' >= 6 && firstCardImage[4] - '0' < 9)
+			{
+				nameTxt_name.text = "박종수";
 				nameChk = true;
 				curTime = time;
 				nameTxt.SetActive(true);
