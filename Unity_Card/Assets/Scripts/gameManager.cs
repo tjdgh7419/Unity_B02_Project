@@ -21,7 +21,9 @@ public class gameManager : MonoBehaviour
 	public GameObject secondCard;
     public GameObject card;
     public Text timeTxt;
-	public static gameManager I;
+    public Text scoreTxt;
+    public float score;
+    public static gameManager I;
 	public bool isMatching;
 
 
@@ -59,9 +61,17 @@ public class gameManager : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (!isMatching)
+			
+		scoreTxt.text = score.ToString("");
+
+		if (Input.GetMouseButtonDown(0))
 		{
-			// ½Ã°£ÀÌ 0º¸´Ù Å©¸é Á¦ÇÑ ½Ã°£À» °¨¼Ò½ÃÅ´
+			score += 1;
+		}
+		
+        if (!isMatching)
+		{
+			// ï¿½Ã°ï¿½ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ò½ï¿½Å´
 			if (currentTime > 0f)
 			{
 				currentTime -= Time.deltaTime;
@@ -69,7 +79,7 @@ public class gameManager : MonoBehaviour
 			}
 			else
 			{
-				// ½Ã°£ÀÌ ´Ù µÇ¸é °ÔÀÓ ¿À¹ö Ã³¸®
+				// ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ç¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
 				GameOver();
 			}
 		}
@@ -87,7 +97,7 @@ public class gameManager : MonoBehaviour
 
 		if (firstCardImage == secondCardImage) 
 		{
-            audioSource.PlayOneShot(correctSound); //¸ÂÃèÀ»¶§ »ç¿îµå Ãß°¡
+            audioSource.PlayOneShot(correctSound); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
             firstCard.GetComponent<card>().destroyCard();
 			secondCard.GetComponent<card>().destroyCard();
 
@@ -102,7 +112,7 @@ public class gameManager : MonoBehaviour
 
 		else
 		{
-            audioSource.PlayOneShot(incorrectSound); //Æ²·ÈÀ»¶§ »ç¿îµå Ãß°¡
+            audioSource.PlayOneShot(incorrectSound); //Æ²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
             firstCard.transform.Find("back").GetComponent<SpriteRenderer>().color = Color.gray;
 			secondCard.transform.Find("back").GetComponent<SpriteRenderer>().color = Color.gray;
             FailMatch();
@@ -115,7 +125,7 @@ public class gameManager : MonoBehaviour
 		secondCard = null;
 	}
 
-    public void FailMatch() //¸ÂÃß±â ½ÇÆÐÇßÀ»¶§ÀÇ ¸Þ¼Òµå
+    public void FailMatch() //ï¿½ï¿½ï¿½ß±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼Òµï¿½
     {
         isMatching = true;
         currentTime -= 3f;
