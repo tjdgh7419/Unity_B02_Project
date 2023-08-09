@@ -18,7 +18,7 @@ public class gameManager : MonoBehaviour
     public Text timeTxt;
     public float time;
 	public static gameManager I;
-
+	int i = 1;
 	void Awake()
 	{
 		I = this;
