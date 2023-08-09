@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class startBtn : MonoBehaviour
+public class scoreBtn : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -16,10 +16,10 @@ public class startBtn : MonoBehaviour
     {
         
     }
-
-    public void gameStart()
+    public void scoreStart()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("ScoreBoardScene");
     }
 }
+
 
