@@ -80,6 +80,7 @@ public class gameManager : MonoBehaviour
 		{
 			firstCard.transform.Find("back").GetComponent<SpriteRenderer>().color = Color.gray;
             secondCard.transform.Find("back").GetComponent<SpriteRenderer>().color = Color.gray;
+
             firstCard.GetComponent <card>().closeCard();
 			secondCard.GetComponent<card>().closeCard();
 		}
