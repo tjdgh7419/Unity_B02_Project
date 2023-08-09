@@ -20,7 +20,8 @@ public class gameManager : MonoBehaviour
 	public GameObject firstCard;
 	public GameObject secondCard;
     public GameObject card;
-    public Text timeTxt;
+	public Text timeTxt;
+
     public Text scoreTxt;
     public float score;
     public static gameManager I;
