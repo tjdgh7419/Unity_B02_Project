@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638271653631498070
-    m_Hash: 2405387192
+      ticks: 638271674959701073
+    m_Hash: 947626093
   m_LockFileStatus:
     m_FilePath: C:/Users/admin/Documents/GitHub/Unity_B02_Project/Unity_Card/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638271653636654198
-    m_Hash: 517873031
+      ticks: 638271674959711073
+    m_Hash: 28772972
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
