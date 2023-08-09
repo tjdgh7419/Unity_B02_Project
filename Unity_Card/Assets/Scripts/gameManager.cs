@@ -13,8 +13,9 @@ public class gameManager : MonoBehaviour
 	public float maxTime = 60f;
 	public float currentTime;
 
-	public AudioClip match;
-	public AudioSource audioSource;
+    public AudioClip correctSound;
+    public AudioClip incorrectSound;
+    public AudioSource audioSource;
 	public GameObject endTxt;
 	public GameObject firstCard;
 	public GameObject secondCard;
@@ -86,8 +87,8 @@ public class gameManager : MonoBehaviour
 
 		if (firstCardImage == secondCardImage) 
 		{
-			audioSource.PlayOneShot(match);
-			firstCard.GetComponent<card>().destroyCard();
+            audioSource.PlayOneShot(correctSound); //맞췄을때 사운드 추가
+            firstCard.GetComponent<card>().destroyCard();
 			secondCard.GetComponent<card>().destroyCard();
 
 			int cardsLeft = GameObject.Find("cards").transform.childCount;
@@ -101,7 +102,8 @@ public class gameManager : MonoBehaviour
 
 		else
 		{
-			firstCard.transform.Find("back").GetComponent<SpriteRenderer>().color = Color.gray;
+            audioSource.PlayOneShot(incorrectSound); //틀렸을때 사운드 추가
+            firstCard.transform.Find("back").GetComponent<SpriteRenderer>().color = Color.gray;
 			secondCard.transform.Find("back").GetComponent<SpriteRenderer>().color = Color.gray;
             FailMatch();
   
@@ -113,10 +115,10 @@ public class gameManager : MonoBehaviour
 		secondCard = null;
 	}
 
-    public void FailMatch()
+    public void FailMatch() //맞추기 실패했을때의 메소드
     {
         isMatching = true;
-        currentTime -= 3f; // 실패할 때마다 5초씩 감소 (원하는 시간을 조정 가능)
+        currentTime -= 3f;
         if (currentTime < 0f)
         {
             currentTime = 0f;
@@ -127,8 +129,9 @@ public class gameManager : MonoBehaviour
 
 
 
-    private void GameOver()
+	public void GameOver()
     {
+		endTxt.gameObject.SetActive(true);
 
     }
 

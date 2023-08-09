@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 105930357}
   - component: {fileID: 105930356}
   m_Layer: 5
-  m_Name: MemberBtn
+  m_Name: Member
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -399,7 +399,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 200, y: 250}
-  m_SizeDelta: {x: 760, y: 200}
+  m_SizeDelta: {x: 300, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &414410488
 MonoBehaviour:
@@ -456,9 +456,8 @@ GameObject:
   - component: {fileID: 471079116}
   - component: {fileID: 471079115}
   - component: {fileID: 471079114}
-  - component: {fileID: 471079118}
   m_Layer: 5
-  m_Name: Score
+  m_Name: scoreBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -543,16 +542,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 00b9e18cdad4d1d4981891e4703e70f3, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: set_name
-        m_Mode: 5
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: scoreBtn, Assembly-CSharp
+        m_MethodName: scoreStart
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: ScoreStart();
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &471079116
@@ -575,7 +574,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -593,28 +592,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 471079112}
   m_CullTransparentMesh: 1
---- !u!114 &471079118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 471079112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00b9e18cdad4d1d4981891e4703e70f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxTime: 60
-  currentTime: 0
-  match: {fileID: 0}
-  audioSource: {fileID: 0}
-  endTxt: {fileID: 0}
-  firstCard: {fileID: 0}
-  secondCard: {fileID: 0}
-  card: {fileID: 0}
-  timeTxt: {fileID: 0}
-  isMatching: 0
 --- !u!1 &572770087
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,10 +605,8 @@ GameObject:
   - component: {fileID: 572770091}
   - component: {fileID: 572770090}
   - component: {fileID: 572770089}
-  - component: {fileID: 572770093}
-  - component: {fileID: 572770094}
   m_Layer: 5
-  m_Name: Member
+  m_Name: memberBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -716,16 +691,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 00b9e18cdad4d1d4981891e4703e70f3, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: set_name
-        m_Mode: 5
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: memberBtn, Assembly-CSharp
+        m_MethodName: memberStart
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: MemberSceneStart();
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &572770091
@@ -748,7 +723,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -766,50 +741,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 572770087}
   m_CullTransparentMesh: 1
---- !u!114 &572770093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 572770087}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00b9e18cdad4d1d4981891e4703e70f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxTime: 60
-  currentTime: 0
-  match: {fileID: 0}
-  audioSource: {fileID: 0}
-  endTxt: {fileID: 0}
-  firstCard: {fileID: 0}
-  secondCard: {fileID: 0}
-  card: {fileID: 0}
-  timeTxt: {fileID: 0}
-  isMatching: 0
---- !u!114 &572770094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 572770087}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00b9e18cdad4d1d4981891e4703e70f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxTime: 60
-  currentTime: 0
-  match: {fileID: 0}
-  audioSource: {fileID: 0}
-  endTxt: {fileID: 0}
-  firstCard: {fileID: 0}
-  secondCard: {fileID: 0}
-  card: {fileID: 0}
-  timeTxt: {fileID: 0}
-  isMatching: 0
 --- !u!1 &705321347
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,7 +884,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.3529412, g: 0.3529412, b: 1, a: 0}
+  m_BackGroundColor: {r: 0.7058824, g: 0.7058824, b: 0.47058824, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1276,7 +1207,7 @@ GameObject:
   - component: {fileID: 1364357881}
   - component: {fileID: 1364357880}
   m_Layer: 5
-  m_Name: ScoreBtn
+  m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
