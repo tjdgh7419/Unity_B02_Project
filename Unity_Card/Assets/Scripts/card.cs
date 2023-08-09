@@ -7,6 +7,9 @@ public class card : MonoBehaviour
     public AudioClip flip;
     public AudioSource audioSource;
     public Animator anim;
+
+    //private bool isTimeOver = false; > 시간 초과 여부를 확인하는 플래그
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +40,11 @@ public class card : MonoBehaviour
         }
     }
 
-	public void destroyCard()
+    //public void SetTimeOver() >> 시간이 초과되었음에 대한 매서드
+    //{
+       // isTimeOver = true; 
+    //}
+    public void destroyCard()
 	{
 		Invoke("destroyCardInvoke", 1.0f);
 	}
