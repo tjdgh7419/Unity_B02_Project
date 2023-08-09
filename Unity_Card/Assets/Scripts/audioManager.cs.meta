@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: cf7d7f5bc384adb4aba065130fab2b7f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - audioSource: {instanceID: 0}
+  - bgmusic: {fileID: 8300000, guid: 5d43c7b91504eeb4698c902e448149f6, type: 3}
+  - correctSound: {fileID: 8300000, guid: c52d50e4883d9b84caac19ca4742215f, type: 3}
+  - incorrectSound: {fileID: 8300000, guid: e095f14f1d8f45a4ea8d43482f87de50, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
