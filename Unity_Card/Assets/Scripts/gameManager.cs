@@ -21,12 +21,21 @@ public class gameManager : MonoBehaviour
 	public GameObject secondCard;
     public GameObject card;
     public Text timeTxt;
+<<<<<<< HEAD
 	public static gameManager I;
 	public bool isMatching;
 
 
 
     void Awake()
+=======
+    public float time;
+    public Text scoreTxt;
+    public float score;
+    public static gameManager I;
+	
+	void Awake()
+>>>>>>> 7b82d2e1f7f836dce9ad7cd135ffd9b631671cb5
 	{
 		I = this;
 	}
@@ -54,6 +63,34 @@ public class gameManager : MonoBehaviour
 			string rtanName = "rtan" + rtans[i].ToString();
 			newCard.transform.Find("front").GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(rtanName);
 		}
+<<<<<<< HEAD
+=======
+    } 
+
+    // Update is called once per frame
+    void Update()
+    {
+		{
+            
+            scoreTxt.text = score.ToString("");
+            if (Input.GetMouseButtonDown(0))
+            {
+				score += 1;
+            }
+        }
+
+        {
+            time += Time.deltaTime;
+            timeTxt.text = time.ToString("N2");
+            if (time >= 30f)
+            {
+                endTxt.SetActive(true);
+                Time.timeScale = 0f;
+
+            }
+        }
+
+>>>>>>> 7b82d2e1f7f836dce9ad7cd135ffd9b631671cb5
     }
 
 	// Update is called once per frame
@@ -102,12 +139,19 @@ public class gameManager : MonoBehaviour
 
 		else
 		{
+<<<<<<< HEAD
             audioSource.PlayOneShot(incorrectSound); //틀렸을때 사운드 추가
             firstCard.transform.Find("back").GetComponent<SpriteRenderer>().color = Color.gray;
 			secondCard.transform.Find("back").GetComponent<SpriteRenderer>().color = Color.gray;
             FailMatch();
   
             firstCard.GetComponent<card>().closeCard();
+=======
+			firstCard.transform.Find("back").GetComponent<SpriteRenderer>().color = Color.gray;
+            secondCard.transform.Find("back").GetComponent<SpriteRenderer>().color = Color.gray;
+
+            firstCard.GetComponent <card>().closeCard();
+>>>>>>> 7b82d2e1f7f836dce9ad7cd135ffd9b631671cb5
 			secondCard.GetComponent<card>().closeCard();
 		}
 
