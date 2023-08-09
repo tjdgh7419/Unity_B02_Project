@@ -17,8 +17,10 @@ public class gameManager : MonoBehaviour
     public GameObject card;
     public Text timeTxt;
     public float time;
-	public static gameManager I;
-	int i = 1;
+    public Text scoreTxt;
+    public float score;
+    public static gameManager I;
+	
 	void Awake()
 	{
 		I = this;
@@ -48,14 +50,26 @@ public class gameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
-        timeTxt.text = time.ToString("N2");
-		if(time >= 30f)
 		{
-			endTxt.SetActive(true);
-			Time.timeScale = 0f;
+            
+            scoreTxt.text = score.ToString("");
+            if (Input.GetMouseButtonDown(0))
+            {
+				score += 1;
+            }
+        }
 
-		}
+        {
+            time += Time.deltaTime;
+            timeTxt.text = time.ToString("N2");
+            if (time >= 30f)
+            {
+                endTxt.SetActive(true);
+                Time.timeScale = 0f;
+
+            }
+        }
+
     }
 
 	public void isMatched()
