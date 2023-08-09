@@ -943,8 +943,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00b9e18cdad4d1d4981891e4703e70f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameTxt: {fileID: 0}
-  nameTxt_name: {fileID: 0}
+  nameTxt: {fileID: 165814965}
+  nameTxt_name: {fileID: 165814967}
   match: {fileID: 8300000, guid: 96391c1a4f324ae4c9ddfd2977a85da7, type: 3}
   audioSource: {fileID: 1904806442}
   endTxt: {fileID: 621574528}

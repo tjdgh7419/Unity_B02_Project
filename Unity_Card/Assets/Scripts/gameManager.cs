@@ -62,7 +62,7 @@ public class gameManager : MonoBehaviour
 
 		}
 
-		if (nameChk && (curTime + 1f < time))
+		if (nameChk && (curTime + 0.6f < time))
 		{
 			nameTxt.SetActive(false);
 		}
@@ -110,6 +110,11 @@ public class gameManager : MonoBehaviour
 		}
 		else
 		{
+			nameTxt_name.text = "½ÇÆÐ!";
+			nameChk = true;
+			curTime = time;
+			nameTxt.SetActive(true);
+
 			firstCard.GetComponent <card>().closeCard();
 			secondCard.GetComponent<card>().closeCard();
 		}
